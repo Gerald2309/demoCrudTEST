@@ -1,5 +1,7 @@
 package com.crud.democrud.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,8 +12,15 @@ public class UsuarioRolModel {
     @Column(unique = true, nullable = false)
     private Long idRol;
 
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UsuarioModel.class, optional = false)
+    @JoinColumn(name = "idRolUsuario", nullable = false)
+    @JsonBackReference
+    private UsuarioModel usuario;
+
     private Long idUsuario;
     private String rol;
+
+
 
     public Long getIdUsuario() {
         return idUsuario;
