@@ -45,10 +45,8 @@ public class UsuarioController {
         }
     }
 
-    @PutMapping(path = "/{id}")
+    @PutMapping(path = "/actualizar")
     public UsuarioModel actualizarUsuario(@RequestBody UsuarioModel usuario) {
         return this.usuarioService.actualizarUsuario(usuario);
     }
-
-
 }

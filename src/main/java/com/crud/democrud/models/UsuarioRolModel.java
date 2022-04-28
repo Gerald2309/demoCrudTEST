@@ -20,8 +20,6 @@ public class UsuarioRolModel {
     private Long idUsuario;
     private String rol;
 
-
-
     public Long getIdUsuario() {
         return idUsuario;
     }
@@ -46,9 +44,7 @@ public class UsuarioRolModel {
         this.rol = rol;
     }
 
-    public UsuarioRolModel(Long idUsuario, String rol) {
-        this.idUsuario = idUsuario;
-
+    public UsuarioRolModel(String rol) {
         this.rol = rol;
     }
 

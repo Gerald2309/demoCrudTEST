@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/usuarioRol")
+@RequestMapping("/rolUsuario")
 public class UsuarioRolController {
     @Autowired
     UsuarioRolService usuarioRolService;
@@ -32,11 +32,12 @@ public class UsuarioRolController {
 
 
     @DeleteMapping(path = "/{id}")
-    public String eliminarPorId(@PathVariable("id") Long id) {
+    public String eliminarPorId(@PathVariable(value = "id") Long id) {
         boolean ok = this.usuarioRolService.eliminarRolUsuario(id);
         if (ok) {
             return "Se eliminó el rol de usuario con id " + id;
         } else {
+
             return "No pudo eliminar el rol de usuario con id" + id;
         }
     }

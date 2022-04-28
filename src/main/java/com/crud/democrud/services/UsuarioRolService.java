@@ -30,9 +30,6 @@ public class UsuarioRolService {
         return usuarioRolRepository.save(rolUsuario);
     }
 
-
-
-
     public boolean eliminarRolUsuario(Long id) {
         try{
             usuarioRolRepository.deleteById(id);
