@@ -25,6 +25,11 @@ public class UsuarioService {
         return usuarioRepository.findById(id);
     }
 
+    public UsuarioModel actualizarUsuario(UsuarioModel usuario){
+        return usuarioRepository.save(usuario);
+    }
+
+
 
     public ArrayList<UsuarioModel>  obtenerPorPrioridad(Integer prioridad) {
         return usuarioRepository.findByPrioridad(prioridad);
